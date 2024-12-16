@@ -1,6 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { CreateUserDto, LoginUserDto } from './dto/create-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
 import { UserRepository } from 'src/repositories/user.repositories';
 
 @Injectable()
@@ -15,13 +14,5 @@ export class UsersService {
   }
   findOne(id: string) {
     return this.userRepo.findOne(id);
-  }
-
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return updateUserDto;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} user`;
   }
 }
