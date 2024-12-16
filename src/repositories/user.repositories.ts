@@ -69,4 +69,13 @@ export class UserRepository {
       return error;
     }
   }
+  async findOne(id: string) {
+    const getById = await this.userModel.findById(id);
+    if (!getById) {
+      throw new NotFoundException('usere not found');
+    }
+    const user = getById.toObject();
+    delete user.password;
+    return user;
+  }
 }

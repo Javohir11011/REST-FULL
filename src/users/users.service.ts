@@ -13,12 +13,8 @@ export class UsersService {
   loginUserService(loginDto: LoginUserDto) {
     return this.userRepo.loginUserRepo(loginDto);
   }
-  findAll() {
-    return `This action returns all users`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  findOne(id: string) {
+    return this.userRepo.findOne(id);
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
